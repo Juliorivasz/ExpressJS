@@ -1,0 +1,8 @@
+h1{
+    color: chocolate;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
