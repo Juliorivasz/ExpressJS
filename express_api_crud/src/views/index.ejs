@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicando Ejs</title>
-</head>
-<body>
+<!-- aplicamos - include mas la ruta del archivo significa dividir un html en varias partes-->
+<!-- y luego unirlos con ejs llamado ejs partials -->
+<%- include('partials/header'); %>
     <!-- para aplicar el ejs en el html usamos -->
     <h1>Pagina con Express</h1>
     <h2>
         <%= title %>
     </h2>
-</body>
-</html>
+
+    <!-- se puede aplicar logica de js usando ejs sin el signo igual -->
+    <% if(isActive) { %>
+        <p>esta activo</p>
+    <% } else { %>
+        <p>esta inactivo</p>
+    <% } %>
+
+<%- include('partials/footer'); %>
