@@ -3,11 +3,19 @@ const userRoutes = require("./src/public/routes/users");
 const caseSensitive = require("./src/public/routes/case-sensitive");
 const patch = require("path");
 const app = express();
+// para aplicar el modulo no necesitamos la declarar una variable
+require('ejs');
 
 // settings
 // set() se le pasa dos parametros el primero es la variable a crear
 //  el segundo parametro es el valor que tendra la variable creada
 app.set("port", "3000");
+
+// configurando ejs para que use las vistas
+app.set("view engine", "ejs");
+
+// colocando la direccion de las views en express para usar index.ejs
+app.set("views", patch.join(__dirname,'src/views'));
 
 // get() se le pasa un parametro que es la variable a utilizar
 // userRoutes es un archivo ubicado en routes que contiene una funcion para obtener y enviar rutas

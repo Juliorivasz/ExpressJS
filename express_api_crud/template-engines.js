@@ -1,0 +1,2 @@
+// modulo para hacer interfaz con el backend, se usa para leer, combinar y enviar mezcla de codigo con html el modulo se llama :  ejs
+//  lo que hace es que le da un nuevo metodo a express llamado render y sirve para mostrar un maqueta html o archivo usando express
