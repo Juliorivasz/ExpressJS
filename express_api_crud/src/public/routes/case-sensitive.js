@@ -2,9 +2,10 @@
 // es un metodo de express()
 
 require("ejs");
-const axios = require("axios");
 
 const { Router } = require("express");
+const axios = require("axios");
+
 // es una funcion que debe ejecutarse
 // lo que hace este metodo es adquirir
 // se debe llamar la variable como router por convencion
@@ -26,11 +27,11 @@ router.all("/ejs", (req, res) => {
 });
 
 router.get("/posts", async (req, res) => {
-  const response = await axios.get(
+  const response = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
-  ).then((respon)=>console.log(respon))
-
-  res.render("posts", { posts: response.data });
+  ).then((respuesta)=>console.log(respuesta))
+  
+  res.render("posts");
 });
 
 module.exports = router;

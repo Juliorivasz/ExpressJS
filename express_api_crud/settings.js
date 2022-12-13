@@ -6,6 +6,7 @@ const app = express();
 // para aplicar el modulo no necesitamos la declarar una variable
 require('ejs');
 
+
 // settings
 // set() se le pasa dos parametros el primero es la variable a crear
 //  el segundo parametro es el valor que tendra la variable creada
