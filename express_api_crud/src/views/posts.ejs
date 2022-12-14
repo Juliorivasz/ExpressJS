@@ -1,8 +1,14 @@
 
 <%- include('partials/header'); %>
 
-<h1>Posts</h1>
-
+<h1>Posts</h1> 
+<p>el numero de publicaciones fueron : <%= posts.length %></p>
+<% for (let i = 0 ; i < posts.length; i++) { %>
+    <article>
+        <h1> <%= posts[i].title %> </h1>
+        <p> <%= posts[i].body %> </p>
+    </article>
+<% } %>
 
 
 <%- include('partials/footer'); %>

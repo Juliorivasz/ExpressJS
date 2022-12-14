@@ -29,9 +29,12 @@ router.all("/ejs", (req, res) => {
 router.get("/posts", async (req, res) => {
   const response = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
-  ).then((respuesta)=>console.log(respuesta))
+  )
+  .then(resp=>resp.json())
   
-  res.render("posts");
+  res.render("posts", {
+    posts: response
+  });
 });
 
 module.exports = router;
