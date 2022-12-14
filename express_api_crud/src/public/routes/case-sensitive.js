@@ -3,8 +3,10 @@
 
 require("ejs");
 
+const conectDB = require("../../db");
 const { Router } = require("express");
-const axios = require("axios");
+
+conectDB();
 
 // es una funcion que debe ejecutarse
 // lo que hace este metodo es adquirir
@@ -29,8 +31,7 @@ router.all("/ejs", (req, res) => {
 router.get("/posts", async (req, res) => {
   const response = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
-  )
-  .then(resp=>resp.json())
+  ).then(resp => resp.json())
   
   res.render("posts", {
     posts: response
